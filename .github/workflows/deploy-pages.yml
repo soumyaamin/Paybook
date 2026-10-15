@@ -9,10 +9,13 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # optional: uncomment if you hit deployment permission errors
+  # deployments: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: github-pages         # <- ADD THIS LINE
     steps:
       - name: Checkout
         uses: actions/checkout@v4
